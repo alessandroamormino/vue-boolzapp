@@ -12,6 +12,7 @@
 #ui{
     display: flex;
     flex-flow: row nowrap;
+    /* flex */
     height: 100dvh;
     width: 100vw;
 }
@@ -27,11 +28,33 @@ main {
 
 /* header */
 header {
+    display: flex;
+    justify-content: space-between;
+    /* flex */
     height: 80px;
     background-color: #EAEAEA;
 }
 
-header.header-left{
+#side header {
     border-right: 1px solid #D6D6D6;
+}
+
+#side header .left,
+#side header .right  {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    /* flex */
+    height: 100%;
+    padding: .5em 1em;
+}
+
+#side header .left img{
+    height: 100%;
+    border-radius: 50%;
+}
+
+header .fa-solid{
+    color: #B1B1B1;
 }
 /* /header */
