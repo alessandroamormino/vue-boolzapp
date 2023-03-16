@@ -107,7 +107,7 @@ const date = new Date();
             },
             {
                 name: 'Claudia',
-                avatar: 'img/avatar_5.jpg',
+                avatar: 'img/avatar_6.jpg',
                 visible: false,
                 messages: [
                     {
@@ -189,6 +189,21 @@ const date = new Date();
 
             this.contacts[this.chatIndex].messages.push(newObject);
             this.newMessage = '';
-        }
+
+            setTimeout(this.receiveMessage, 1000);
+        }, 
+
+        receiveMessage(){
+            const newObject = {
+                date: date,
+                message: 'Ok!',
+                status: 'received'
+            }
+
+            this.contacts[this.chatIndex].messages.push(newObject);
+        },
+
+
+
     },
   }).mount('#app')
