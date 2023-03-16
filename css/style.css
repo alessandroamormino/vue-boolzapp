@@ -25,7 +25,7 @@ body {
     width: 35%;
 }
 
-main {
+#main {
     width: 65%;
     background-image: url('../img/mine.jpg');
 }
@@ -62,16 +62,16 @@ header .left img{
     font-size: 1.1em;
 }
 
-.fa-solid{
+header .fa-solid{
     font-size: 1.3em;
     color: #B1B1B1;
 }
 
-main header .chat-info .chat-name{
+#main header .chat-info .chat-name{
     font-size: 1.1em;
 }
 
-main header .chat-info .last-online{
+#main header .chat-info .last-online{
     font-size: .9em;
     color: grey;
 }
@@ -125,7 +125,7 @@ main header .chat-info .last-online{
 #search .search-bar {
     display: flex;
     /* flex */
-
+    border-radius: 5px;
     height: 2em;
 }
 
@@ -202,3 +202,42 @@ main header .chat-info .last-online{
 }
 /* /chat */
 
+/* Main */
+main{
+    height: calc(100% - 160px);
+}
+/* /Main */
+
+/* Footer */
+footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2em;
+    /* flex */
+    height: 80px;
+    background-color: #F4EEEA;
+
+    padding: 0 2em;
+}
+
+footer i {
+    font-size: 1.5em;
+    color: #697376;
+}
+
+footer input{
+    flex-grow: 1;
+    /* flex */
+
+    height: 60%;
+    border: none;
+    border-radius: 5px;
+    padding-left: 1em;
+
+}
+
+footer input:focus-visible{
+    outline: none;
+}
+/* /Footer */
