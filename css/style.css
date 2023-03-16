@@ -60,7 +60,7 @@ header {
 }
 /* /header */
 
-#side .notification {
+#side #notification {
     display: flex;
     align-items: center;
     /* flex */
@@ -68,7 +68,7 @@ header {
     background-color: #78DCFF;
 }
 
-#side .notification .icon {
+#side #notification .icon {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -81,19 +81,55 @@ header {
     margin: 1em;
 }
 
-#side .notification .icon .fa-solid{
+#side #notification .icon .fa-solid{
     color: #78DCFF;
 }
 
-#side .notification .notification-info{
+#side #notification .notification-info{
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
 }
 
-#side .notification .notification-info a, 
-#side .notification .notification-info a:visited,
-#side .notification .notification-info a:focus
+#side #notification .notification-info a, 
+#side #notification .notification-info a:visited,
+#side #notification .notification-info a:focus
 {
     color: grey;
 }
+
+#search{
+    padding: .5em;
+    background-color: #FAFAFA;
+}
+
+#search .search-bar {
+    display: flex;
+    /* flex */
+
+    height: 2em;
+}
+
+#search .search-bar .icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* flex */
+    background-color: #fff;
+    width: 70px;
+    font-size: .8em;
+
+    border-right: 1px solid #FAFAFA;
+}
+
+#search .search-bar input{
+    flex-grow: 1;
+    /* flex */
+    border: none;
+    padding-left: 1em;
+}
+
+#search .search-bar input:focus-visible{
+    outline: none;
+}
+
