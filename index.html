@@ -53,21 +53,7 @@
                 <!-- /search -->
                 <!-- contacts -->
                 <div id="chat-container">
-                    <!-- <div class="chat">
-                        <div class="chat-left">
-                            <div class="chat-img">
-                                <img src="img/avatar_2.jpg" alt="contact 1">
-                            </div>
-                            <div class="chat-info">
-                                <span class="chat-name">Michele</span>
-                                <span class="last-message">Ultimo messaggio inviato</span>
-                            </div>
-                        </div>
-                        <div class="chat-right">
-                            <span>12:00</span>
-                        </div>
-                    </div> -->
-                    <div v-for="contact in contacts" class="chat">
+                    <div v-for="(contact, index) in contacts" @click="openChat(index)" class="chat">
                         <div class="chat-left">
                             <div class="chat-img">
                                 <img :src="contact.avatar" :alt="contact.name">
@@ -87,11 +73,12 @@
             <!-- /contacts side -->
             <!-- chat side -->
             <div id="main">
+                <!-- header -->
                 <header>
                     <div class="left">
-                        <img src="img/avatar_2.jpg" alt="Active contact">
+                        <img :src="contacts[chatIndex].avatar" :alt="contacts[chatIndex].name">
                         <div class="chat-info">
-                            <span class="chat-name">Michele</span>
+                            <span class="chat-name">{{contacts[chatIndex].name}}</span>
                             <span class="last-online">Ultimo accesso oggi alle 12:00</span>
                         </div>
                     </div>
@@ -101,9 +88,10 @@
                         <i class="fa-solid fa-ellipsis-vertical"></i>
                     </div>
                 </header>
+                <!-- /header -->
                 <main>
                     <div class="main-chat">
-                        <div class="message sent">
+                        <!-- <div class="message sent">
                             <div class="message-bubble green">
                                 <span>Prova messaggio</span>
                                 <span class="send-time">16:30</span>
@@ -118,6 +106,12 @@
                         <div class="message reveiced">
                             <div class="message-bubble white">
                                 <span>Prova messaggio</span>
+                                <span class="send-time">16:30</span>
+                            </div>
+                        </div> -->
+                        <div v-for="(message, messageIndex) in contacts[chatIndex].messages" :class="message.status == 'sent' ? 'sent' : 'received' " class="message">
+                            <div :class="message.status == 'sent' ? 'green' : 'white' " class="message-bubble">
+                                <span>{{contacts[chatIndex].messages[messageIndex].message}}</span>
                                 <span class="send-time">16:30</span>
                             </div>
                         </div>
@@ -135,6 +129,7 @@
     </div>
     <!-- scripts -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.3.0/build/global/luxon.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
