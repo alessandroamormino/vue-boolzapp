@@ -183,8 +183,12 @@ const date = new Date();
                 status: 'sent'
             }
 
-            this.contacts[this.chatIndex].messages.push(newObject);
+            if(this.newMessage==""){
+                return false;
+            } 
 
+            this.contacts[this.chatIndex].messages.push(newObject);
+            this.newMessage = '';
         }
     },
   }).mount('#app')
