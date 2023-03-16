@@ -15,7 +15,9 @@
     <div id="app">
 
         <div id="ui">
+            <!-- contacts side -->
             <div id="side">
+                <!-- header -->
                 <header>
                     <div class="left">
                         <img src="img/avatar_1.jpg" alt="My Profile Avatar">
@@ -27,6 +29,8 @@
                         <i class="fa-solid fa-ellipsis-vertical"></i>
                     </div>
                 </header>
+                <!-- /header -->
+                <!-- notification -->
                 <div id="notification">
                     <div class="icon">
                         <i class="fa-solid fa-bell-slash"></i>
@@ -36,6 +40,8 @@
                         <a href="#">Attiva notifiche desktop</a>
                     </div>
                 </div>
+                <!-- /notification -->
+                <!-- search -->
                 <div id="search">
                     <div class="search-bar">
                         <div class="icon">
@@ -44,8 +50,10 @@
                         <input type="text" placeholder="Cerca o inizia una nuova chat">
                     </div>
                 </div>
+                <!-- /search -->
+                <!-- contacts -->
                 <div id="chat-container">
-                    <div class="chat">
+                    <!-- <div class="chat">
                         <div class="chat-left">
                             <div class="chat-img">
                                 <img src="img/avatar_2.jpg" alt="contact 1">
@@ -58,9 +66,26 @@
                         <div class="chat-right">
                             <span>12:00</span>
                         </div>
+                    </div> -->
+                    <div v-for="contact in contacts" class="chat">
+                        <div class="chat-left">
+                            <div class="chat-img">
+                                <img :src="contact.avatar" :alt="contact.name">
+                            </div>
+                            <div class="chat-info">
+                                <span class="chat-name">{{contact.name}}</span>
+                                <span class="last-message">{{contact.messages[contact.messages.length - 1].message}}</span>
+                            </div>
+                        </div>
+                        <div class="chat-right">
+                            <span>12:00</span>
+                        </div>
                     </div>
                 </div>
+                <!-- /contacts -->
             </div>
+            <!-- /contacts side -->
+            <!-- chat side -->
             <div id="main">
                 <header>
                     <div class="left">
@@ -104,11 +129,12 @@
                     <i class="fa-solid fa-microphone"></i>
                 </footer>
             </div>
+            <!-- /chat side -->
         </div>
 
     </div>
     <!-- scripts -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="js/style.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

@@ -136,6 +136,7 @@ header .fa-solid{
 }
 
 #search{
+    height: 50px;
     padding: .5em;
     background-color: #FAFAFA;
 }
@@ -171,8 +172,8 @@ header .fa-solid{
 }
 
 #side #chat-container {
+    height: calc(100% - 230px);
     overflow-y: scroll;
-    /* test */
 }
 
 /* chat */
