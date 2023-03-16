@@ -54,7 +54,46 @@ header {
     border-radius: 50%;
 }
 
-header .fa-solid{
+.fa-solid{
+    font-size: 1.3em;
     color: #B1B1B1;
 }
 /* /header */
+
+#side .notification {
+    display: flex;
+    align-items: center;
+    /* flex */
+    height: 90px;
+    background-color: #78DCFF;
+}
+
+#side .notification .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* flex */
+
+    background-color: #fff;
+    height: 60%;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    margin: 1em;
+}
+
+#side .notification .icon .fa-solid{
+    color: #78DCFF;
+}
+
+#side .notification .notification-info{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+
+#side .notification .notification-info a, 
+#side .notification .notification-info a:visited,
+#side .notification .notification-info a:focus
+{
+    color: grey;
+}
