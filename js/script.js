@@ -1,4 +1,5 @@
 const { createApp } = Vue
+const date = new Date();
 
   createApp({
     data() {
@@ -167,12 +168,23 @@ const { createApp } = Vue
             }
         ], 
         chatIndex: 0,
-        
+        newMessage : '',
       }
     }, 
     methods: {
         openChat(chatIndex){
             this.chatIndex = chatIndex;
+        },
+
+        sendMessage(){
+            const newObject = {
+                date: date,
+                message: this.newMessage,
+                status: 'sent'
+            }
+
+            this.contacts[this.chatIndex].messages.push(newObject);
+
         }
     },
   }).mount('#app')

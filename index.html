@@ -91,24 +91,6 @@
                 <!-- /header -->
                 <main>
                     <div class="main-chat">
-                        <!-- <div class="message sent">
-                            <div class="message-bubble green">
-                                <span>Prova messaggio</span>
-                                <span class="send-time">16:30</span>
-                            </div>
-                        </div>
-                        <div class="message sent">
-                            <div class="message-bubble green">
-                                <span>Prova messaggio</span>
-                                <span class="send-time">16:30</span>
-                            </div>
-                        </div>
-                        <div class="message reveiced">
-                            <div class="message-bubble white">
-                                <span>Prova messaggio</span>
-                                <span class="send-time">16:30</span>
-                            </div>
-                        </div> -->
                         <div v-for="(message, messageIndex) in contacts[chatIndex].messages" :class="message.status == 'sent' ? 'sent' : 'received' " class="message">
                             <div :class="message.status == 'sent' ? 'green' : 'white' " class="message-bubble">
                                 <span>{{contacts[chatIndex].messages[messageIndex].message}}</span>
@@ -119,7 +101,7 @@
                 </main>
                 <footer>
                     <i class="fa-regular fa-face-smile"></i>
-                    <input type="text" placeholder="Scrivi un messaggio">
+                    <input v-model="newMessage" @keyup.enter="sendMessage()" type="text" placeholder="Scrivi un messaggio">
                     <i class="fa-solid fa-microphone"></i>
                 </footer>
             </div>
