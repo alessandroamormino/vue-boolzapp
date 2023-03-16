@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boolzapp</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -41,10 +44,37 @@
                         <input type="text" placeholder="Cerca o inizia una nuova chat">
                     </div>
                 </div>
+                <div id="chat-container">
+                    <div class="chat">
+                        <div class="chat-left">
+                            <div class="chat-img">
+                                <img src="img/avatar_2.jpg" alt="contact 1">
+                            </div>
+                            <div class="chat-info">
+                                <span class="chat-name">Michele</span>
+                                <span class="last-message">Ultimo messaggio inviato</span>
+                            </div>
+                        </div>
+                        <div class="chat-right">
+                            <span>12:00</span>
+                        </div>
+                    </div>
+                </div>
             </div>
             <main>
                 <header>
-
+                    <div class="left">
+                        <img src="img/avatar_2.jpg" alt="Active contact">
+                        <div class="chat-info">
+                            <span class="chat-name">Michele</span>
+                            <span class="last-online">Ultimo accesso oggi alle 12:00</span>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <i class="fa-solid fa-paperclip"></i>
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </div>
                 </header>
             </main>
         </div>

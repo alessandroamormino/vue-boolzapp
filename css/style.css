@@ -8,6 +8,10 @@
 /* Assets */
 /* /Assets */
 
+body {
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
 /* ui */
 #ui{
     display: flex;
@@ -35,29 +39,43 @@ header {
     background-color: #EAEAEA;
 }
 
-#side header {
-    border-right: 1px solid #D6D6D6;
-}
-
-#side header .left,
-#side header .right  {
+header .left,
+header .right  {
     display: flex;
     align-items: center;
     gap: 1em;
     /* flex */
     height: 100%;
-    padding: .5em 1em;
+    padding: .8em .8em;
 }
 
-#side header .left img{
+header .left img{
     height: 100%;
     border-radius: 50%;
+}
+
+#side header {
+    border-right: 1px solid #D6D6D6;
+}
+
+#side header .left span {
+    font-size: 1.1em;
 }
 
 .fa-solid{
     font-size: 1.3em;
     color: #B1B1B1;
 }
+
+main header .chat-info .chat-name{
+    font-size: 1.1em;
+}
+
+main header .chat-info .last-online{
+    font-size: .9em;
+    color: grey;
+}
+
 /* /header */
 
 #side #notification {
@@ -95,6 +113,7 @@ header {
 #side #notification .notification-info a:visited,
 #side #notification .notification-info a:focus
 {
+    font-size: .9em;
     color: grey;
 }
 
@@ -132,4 +151,54 @@ header {
 #search .search-bar input:focus-visible{
     outline: none;
 }
+
+#side #chat-container {
+    overflow-y: scroll;
+    /* test */
+}
+
+/* chat */
+#side .chat{
+    display: flex;
+    justify-content: space-between;
+    /* flex */
+    height: 90px;
+}
+
+#side .chat .chat-left {
+    display: flex;
+}
+
+#side .chat .chat-img {
+    height: 100%;
+    padding: .5em 1em ;
+}
+
+#side .chat .chat-img img {
+    height: 100%;
+    border-radius: 50%;
+}
+
+.chat-info {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+
+#side .chat .chat-info .chat-name {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+#side .chat .chat-info .last-message {
+    font-size: .9em;
+    color: lightgrey;
+}
+
+#side .chat .chat-right {
+    padding: 1em;
+    font-size: .8em;
+    color: lightgrey;
+}
+/* /chat */
 
