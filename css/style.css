@@ -6,6 +6,24 @@
 /* Reset */
 
 /* Assets */
+.received{
+    display: flex;
+    justify-content: flex-start;
+    /* flex */
+}
+.sent{
+    display: flex;
+    justify-content: flex-end;
+    /* flex */
+}
+
+.white{
+    background-color: #fff;
+}
+
+.green {
+    background-color: #CCFBB4;
+}
 /* /Assets */
 
 body {
@@ -205,6 +223,38 @@ header .fa-solid{
 /* Main */
 main{
     height: calc(100% - 160px);
+    overflow-y: scroll;
+}
+
+main .main-chat{
+    padding: 2em 3em;
+}
+
+main .main-chat .message {
+    margin-bottom: .5em;
+}
+
+main .main-chat .message-bubble{
+    position: relative;
+    /* position */
+    display: flex;
+    align-items: center;
+    /* flex */
+    width: 40%;
+    height: 3em;
+    border-radius: 10px;
+
+    padding: 0 1em;
+}
+
+main .main-chat .message-bubble .send-time{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    /* position */
+    font-size: .7em;
+    padding: .3em;
+    color: lightgrey;
 }
 /* /Main */
 
