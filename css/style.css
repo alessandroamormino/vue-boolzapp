@@ -24,6 +24,13 @@
 .green {
     background-color: #CCFBB4;
 }
+
+a,
+a:visited,
+a:active,
+a:focus {
+    color: #000000;
+}
 /* /Assets */
 
 body {
@@ -268,10 +275,29 @@ main .main-chat .message-bubble{
     padding: .8em 1em;
 }
 
-main .main-chat .message-bubble span:first-child{
+main .main-chat .message-bubble span:first-child {
     word-break: break-word;
 }
 
+.dropdown-toggle {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    /* position */
+    display: none;
+    /* display */
+    padding: .5em;
+}
+
+main .main-chat .message-bubble:hover .dropdown-toggle{
+    display: block;
+}
+
+.dropdown-menu {
+    border: none;
+    --bs-dropdown-link-active-bg: none;
+}
 
 main .main-chat .message-bubble .send-time{
     position: absolute;

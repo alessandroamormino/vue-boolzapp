@@ -213,6 +213,10 @@ const date = new Date();
             })
         },
 
+        deleteMessage(messageIndex){
+            this.contacts[this.chatIndex].messages.splice(messageIndex, 1);
+        }
+
     },
     beforeMount(){
         this.filteredContacts = [...this.contacts];
