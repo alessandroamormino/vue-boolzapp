@@ -169,6 +169,8 @@ const date = new Date();
         ], 
         chatIndex: 0,
         newMessage : '',
+        filteredContacts: [],
+        searchContact: '',
       }
     }, 
     methods: {
@@ -203,7 +205,16 @@ const date = new Date();
             this.contacts[this.chatIndex].messages.push(newObject);
         },
 
+        filterContact(){
+            this.filteredContacts = this.contacts.filter((element) => {
+                if(element.name.toLowerCase().includes(this.searchContact.toLowerCase())){
+                    return true;
+                }
+            })
+        },
 
-
+    },
+    beforeMount(){
+        this.filteredContacts = [...this.contacts];
     },
   }).mount('#app')
