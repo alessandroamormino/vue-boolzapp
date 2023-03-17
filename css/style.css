@@ -241,13 +241,13 @@ header .fa-solid{
 
 #side .chat .chat-info .last-message {
     font-size: .9em;
-    color: lightgrey;
+    color: #a6a6a6;
 }
 
 #side .chat .chat-right {
     padding: 1em;
     font-size: .8em;
-    color: lightgrey;
+    color: #a6a6a6;
 }
 /* /chat */
 
@@ -310,7 +310,7 @@ main .main-chat .message-bubble .send-time{
     /* position */
     font-size: .7em;
     padding: .3em;
-    color: lightgrey;
+    color: #9d9d9d;
 }
 /* /Main */
 

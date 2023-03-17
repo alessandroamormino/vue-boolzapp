@@ -65,7 +65,7 @@
                             </div>
                         </div>
                         <div class="chat-right">
-                            <span>12:00</span>
+                            <span>{{contact.messages[contact.messages.length - 1].date.slice(11, 16)}}</span>
                         </div>
                     </div>
                 </div>
@@ -103,7 +103,7 @@
                                       <li><button @click="deleteMessage(messageIndex)" class="dropdown-item" type="button">Delete message</button></li>
                                     </ul>
 
-                                <span class="send-time">16:30</span>
+                                <span class="send-time">{{contacts[chatIndex].messages[messageIndex].date.slice(11, 16)}}</span>
                             </div>
                         </div>
                     </div>
