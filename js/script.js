@@ -192,6 +192,7 @@ date = `${day}/${month}/${year} ${hoursMinute}`;
         receivedMessages: [],
         lastDayOnline: '', 
         lastHourOnline: '',
+        randomPhraseReceived: ['Ciao!', 'Grazie', 'Ok!', 'Non posso risponderti', 'Ti chiamo più tardi', 'Non so come risponderti..', 'Ci vediamo stasera?', 'Oggi non posso, mi spiace'],
       }
     }, 
     methods: {
@@ -223,7 +224,8 @@ date = `${day}/${month}/${year} ${hoursMinute}`;
         receiveMessage(){
             const newObject = {
                 date: `${date}`,
-                message: 'Ok!',
+                // message: 'Ok!',
+                message: this.randomPhrase(),
                 status: 'received'
             }
 
@@ -253,7 +255,13 @@ date = `${day}/${month}/${year} ${hoursMinute}`;
         getLastOnline(){
             this.lastDayOnline = this.receivedMessages[this.receivedMessages.length - 1].date.slice(0, 10);
             this.lastHourOnline = this.receivedMessages[this.receivedMessages.length - 1].date.slice(11, 16);
+        }, 
+
+        randomPhrase(){
+            let randomNumber = Math.floor(Math.random() * this.randomPhraseReceived.length -1 ) + 1;
+            return this.randomPhraseReceived[randomNumber];
         }
+        
 
     },
     beforeMount(){
