@@ -30,6 +30,10 @@ a:visited,
 a:active,
 a:focus {
     color: #000000;
+} 
+
+.visible{
+    background-color: #d3d3d340;
 }
 /* /Assets */
 

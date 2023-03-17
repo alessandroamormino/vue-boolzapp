@@ -176,6 +176,10 @@ const date = new Date();
     methods: {
         openChat(chatIndex){
             this.chatIndex = chatIndex;
+            this.contacts.forEach((element)=>{
+                element.visible = false;
+            })
+            this.contacts[chatIndex].visible = true;
         },
 
         sendMessage(){
@@ -215,7 +219,7 @@ const date = new Date();
 
         deleteMessage(messageIndex){
             this.contacts[this.chatIndex].messages.splice(messageIndex, 1);
-        }
+        },
 
     },
     beforeMount(){
