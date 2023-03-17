@@ -253,6 +253,8 @@ header .fa-solid{
 
 /* Main */
 main{
+    /* display: flex;
+    flex-direction: column-reverse; */
     height: calc(100% - 160px);
     overflow-y: scroll;
 }

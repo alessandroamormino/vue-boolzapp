@@ -260,8 +260,7 @@ date = `${day}/${month}/${year} ${hoursMinute}`;
         randomPhrase(){
             let randomNumber = Math.floor(Math.random() * this.randomPhraseReceived.length -1 ) + 1;
             return this.randomPhraseReceived[randomNumber];
-        }
-        
+        }, 
 
     },
     beforeMount(){
