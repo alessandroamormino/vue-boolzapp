@@ -30,13 +30,32 @@ body {
     font-family: 'IBM Plex Sans', sans-serif;
 }
 
+.background-top{
+    height: 150px;
+    background-color: #009A88;
+}
+
+#app {
+    width: 100%;
+    height: 100dvh;
+}
+
 /* ui */
 #ui{
+    position: absolute;
+    top: 40px;
+    bottom: 40px;
+    left: 0;
+    right: 0;
+    /* position */
     display: flex;
     flex-flow: row nowrap;
     /* flex */
-    height: 100dvh;
-    width: 100vw;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    /* height: 100dvh;
+    width: 100vw; */
 }
 
 #side{
