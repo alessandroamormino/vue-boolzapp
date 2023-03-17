@@ -7,7 +7,7 @@ const date = new Date();
         contacts: [
             {
                 name: 'Michele',
-                avatar: 'img/avatar_1.jpg',
+                avatar: './img/avatar_1.jpg',
                 visible: true,
                 messages: [
                     {
@@ -29,7 +29,7 @@ const date = new Date();
             },
             {
                 name: 'Fabio',
-                avatar: 'img/avatar_2.jpg',
+                avatar: './img/avatar_2.jpg',
                 visible: false,
                 messages: [
                     {
@@ -51,7 +51,7 @@ const date = new Date();
             },
             {
                 name: 'Samuele',
-                avatar: 'img/avatar_3.jpg',
+                avatar: './img/avatar_3.jpg',
                 visible: false,
                 messages: [
                     {
@@ -73,7 +73,7 @@ const date = new Date();
             },
             {
                 name: 'Alessandro B.',
-                avatar: 'img/avatar_4.jpg',
+                avatar: './img/avatar_4.jpg',
                 visible: false,
                 messages: [
                     {
@@ -90,7 +90,7 @@ const date = new Date();
             },
             {
                 name: 'Alessandro L.',
-                avatar: 'img/avatar_5.jpg',
+                avatar: './img/avatar_5.jpg',
                 visible: false,
                 messages: [
                     {
@@ -107,7 +107,7 @@ const date = new Date();
             },
             {
                 name: 'Claudia',
-                avatar: 'img/avatar_6.jpg',
+                avatar: './img/avatar_6.jpg',
                 visible: false,
                 messages: [
                     {
@@ -129,7 +129,7 @@ const date = new Date();
             },
             {
                 name: 'Federico',
-                avatar: 'img/avatar_7.jpg',
+                avatar: './img/avatar_7.jpg',
                 visible: false,
                 messages: [
                     {
@@ -146,7 +146,7 @@ const date = new Date();
             },
             {
                 name: 'Davide',
-                avatar: 'img/avatar_8.jpg',
+                avatar: './img/avatar_8.jpg',
                 visible: false,
                 messages: [
                     {

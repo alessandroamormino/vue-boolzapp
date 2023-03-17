@@ -91,7 +91,7 @@
                 <!-- /header -->
                 <main>
                     <div class="main-chat">
-                        <div v-for="(message, messageIndex) in contacts[chatIndex].messages" :class="message.status == 'sent' ? 'sent' : 'received' " class="message">
+                        <div v-for="(message, messageIndex) in contacts[chatIndex].messages" :class="message.status" class="message">
                             <div :class="message.status == 'sent' ? 'green' : 'white' " class="message-bubble">
                                 <span>{{contacts[chatIndex].messages[messageIndex].message}}</span>
                                 <span class="send-time">16:30</span>

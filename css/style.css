@@ -260,11 +260,13 @@ main .main-chat .message-bubble{
     display: flex;
     align-items: center;
     /* flex */
-    width: 40%;
-    height: 3em;
+    min-width: 250px;
+    max-width: 50%;
+    min-height: 3em;
+
     border-radius: 10px;
 
-    padding: 0 1em;
+    padding: .8em 1em;
 }
 
 main .main-chat .message-bubble .send-time{
