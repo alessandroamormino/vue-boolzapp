@@ -262,12 +262,16 @@ main .main-chat .message-bubble{
     /* flex */
     min-width: 250px;
     max-width: 50%;
-    min-height: 3em;
 
     border-radius: 10px;
 
     padding: .8em 1em;
 }
+
+main .main-chat .message-bubble span:first-child{
+    word-break: break-word;
+}
+
 
 main .main-chat .message-bubble .send-time{
     position: absolute;
