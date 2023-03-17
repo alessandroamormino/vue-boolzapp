@@ -1,5 +1,23 @@
 const { createApp } = Vue
-const date = new Date();
+let date = new Date();
+let day = date.getDate();
+let month = date.getMonth() + 1;
+let year = date.getFullYear();
+let hours = date.getHours();
+let minutes = date.getMinutes();
+
+if(minutes < 10){
+    minutes = `0${minutes}`;
+}
+
+if(month < 10){
+    month = `0${month}`;
+} 
+
+let hoursMinute = `${hours}:${minutes}`;
+
+date = `${day}/${month}/${year} ${hoursMinute}`;
+
 
   createApp({
     data() {
@@ -187,7 +205,7 @@ const date = new Date();
 
         sendMessage(){
             const newObject = {
-                date: date,
+                date: `${date}`,
                 message: this.newMessage,
                 status: 'sent'
             }
@@ -204,7 +222,7 @@ const date = new Date();
 
         receiveMessage(){
             const newObject = {
-                date: date,
+                date: `${date}`,
                 message: 'Ok!',
                 status: 'received'
             }
