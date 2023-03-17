@@ -28,6 +28,7 @@
 
 body {
     font-family: 'IBM Plex Sans', sans-serif;
+    background-color: #D6DBD6;
 }
 
 .background-top{
@@ -54,12 +55,11 @@ body {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    /* height: 100dvh;
-    width: 100vw; */
 }
 
 #side{
     width: 35%;
+    background-color: #fff;
 }
 
 #main {
