@@ -54,7 +54,7 @@
                 <!-- /search -->
                 <!-- contacts -->
                 <div id="chat-container">
-                    <div v-for="(contact, index) in filteredContacts" @click="openChat(index)" :class="contact.visible ? 'visible' : '' " class="chat">
+                    <div v-for="(contact, index) in filteredContacts" @click="openChat(index), filterMessages(), getLastOnline()"  :class="contact.visible ? 'visible' : '' " class="chat">
                         <div class="chat-left">
                             <div class="chat-img">
                                 <img :src="contact.avatar" :alt="contact.name">
@@ -80,7 +80,7 @@
                         <img :src="contacts[chatIndex].avatar" :alt="contacts[chatIndex].name">
                         <div class="chat-info">
                             <span class="chat-name">{{contacts[chatIndex].name}}</span>
-                            <span class="last-online">Ultimo accesso oggi alle 12:00</span>
+                            <span class="last-online">Ultimo accesso il giorno {{lastDayOnline}} alle {{lastHourOnline}}</span>
                         </div>
                     </div>
                     <div class="right">
@@ -120,7 +120,6 @@
     </div>
     <!-- scripts -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/luxon@3.3.0/build/global/luxon.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <script src="js/script.js"></script>
 </body>

@@ -171,6 +171,9 @@ const date = new Date();
         newMessage : '',
         filteredContacts: [],
         searchContact: '',
+        receivedMessages: [],
+        lastDayOnline: '', 
+        lastHourOnline: '',
       }
     }, 
     methods: {
@@ -221,8 +224,26 @@ const date = new Date();
             this.contacts[this.chatIndex].messages.splice(messageIndex, 1);
         },
 
+        filterMessages(){
+            this.receivedMessages = this.contacts[this.chatIndex].messages.filter((element)=>{
+                if(element.status=='received'){
+                    return true;
+                }
+            });
+        },
+
+        getLastOnline(){
+            this.lastDayOnline = this.receivedMessages[this.receivedMessages.length - 1].date.slice(0, 10);
+            this.lastHourOnline = this.receivedMessages[this.receivedMessages.length - 1].date.slice(11, 16);
+        }
+
     },
     beforeMount(){
         this.filteredContacts = [...this.contacts];
+    },
+
+    mounted(){
+        this.filterMessages();
+        this.getLastOnline();
     },
   }).mount('#app')
