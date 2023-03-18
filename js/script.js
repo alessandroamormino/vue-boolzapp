@@ -42,7 +42,7 @@ date = `${day}/${month}/${year} ${hoursMinute}`;
                         date: '10/01/2020 16:15:22',
                         message: 'Tutto fatto!',
                         status: 'received'
-                    }
+                    },
                 ],
             },
             {
@@ -262,6 +262,12 @@ date = `${day}/${month}/${year} ${hoursMinute}`;
             return this.randomPhraseReceived[randomNumber];
         }, 
 
+        scrollToEnd(){
+            let container = document.getElementById('test');
+            let scrollHeight = container.scrollHeight;
+            container.scrollTop = scrollHeight;
+        }
+
     },
     beforeMount(){
         this.filteredContacts = [...this.contacts];
@@ -270,5 +276,10 @@ date = `${day}/${month}/${year} ${hoursMinute}`;
     mounted(){
         this.filterMessages();
         this.getLastOnline();
+        this.scrollToEnd();
     },
+
+    updated(){
+        this.scrollToEnd();
+    }
   }).mount('#app')
