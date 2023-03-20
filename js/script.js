@@ -203,6 +203,15 @@ date = `${day}/${month}/${year} ${hoursMinute}`;
         randomPhraseReceived: ['Ciao!', 'Grazie', 'Ok!', 'Non posso risponderti', 'Ti chiamo più tardi', 'Non so come risponderti..', 'Ci vediamo stasera?', 'Oggi non posso, mi spiace'],
         chatDropdown: false,
         isDarkMode: false,
+        windowWidth: parseInt(window.innerWidth),
+        isMobile: false,
+        sideMobileStyle: {
+            display: 'none',
+        },
+        mainMobileStyle: {
+            display: 'block',
+            width: '100%',
+        },
       }
     }, 
     methods: {
@@ -292,6 +301,17 @@ date = `${day}/${month}/${year} ${hoursMinute}`;
 
         darkMode(){
             this.isDarkMode = !this.isDarkMode;
+        }, 
+
+        checkMobile(){
+            if(this.windowWidth <= 576) {
+                this.isMobile = true;
+            } else {
+                this.isMobile = false;
+            }
+        }, 
+        toggleMobile(){
+            this.isMobile = !this.isMobile;
         }
 
     },

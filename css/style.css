@@ -537,3 +537,44 @@ footer input.dark {
 #side header.dark {
     border-right: 1px solid #2b2b2b;
 }
+
+#go-back {
+    display: none;
+}
+
+/* RESPONSIVE */
+
+@media only screen and (max-width: 576px) {
+    #ui {
+        top: 0;
+        bottom: 0;
+    }
+
+    #main {
+        display: none;
+    }
+
+    #side {
+        width: 100%;
+        height: 100dvh;
+    }
+
+    .background-top{
+        display: none;
+    }
+
+    .background-bottom{
+        display: none;
+    }
+
+    #go-back {
+        height: 1em;
+        padding: .5em;
+        font-size: 1.1em;
+    }
+
+    main {
+        height: calc(100% - 160px - 1em);
+    }
+
+}

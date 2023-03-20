@@ -21,7 +21,7 @@
         <div class="background-bottom" :class="isDarkMode ? 'dark' : '' "></div>
         <div id="ui" :class="isDarkMode ? 'dark' : '' ">
             <!-- contacts side -->
-            <div id="side" class="" :class="isDarkMode ? 'dark' : '' ">
+            <div id="side" :class="isDarkMode ? 'dark' : '' " :style="isMobile ? sideMobileStyle : {}">
                 <!-- header -->
                 <header :class="isDarkMode ? 'dark' : '' ">
                     <div class="left">
@@ -58,7 +58,7 @@
                 <!-- /search -->
                 <!-- contacts -->
                 <div id="chat-container">
-                    <div v-for="(contact, index) in contacts" v-show="contact.visible" @click="openChat(index), scrollToEnd(), filterMessages(), getLastOnline()" :class="index == chatIndex ? 'selected' : '' " class="chat" :class="isDarkMode ? 'dark' : '' ">
+                    <div v-for="(contact, index) in contacts" v-show="contact.visible" @click="openChat(index), scrollToEnd(), filterMessages(), getLastOnline(), checkMobile()" :class="index == chatIndex ? 'selected' : '' " class="chat" :class="isDarkMode ? 'dark' : '' ">
                         <div class="chat-left">
                             <div class="chat-img">
                                 <img :src="contact.avatar" :alt="contact.name">
@@ -80,7 +80,7 @@
             </div>
             <!-- /contacts side -->
             <!-- chat side -->
-            <div id="main" :class="isDarkMode ? 'dark' : '' ">
+            <div id="main" :class="isDarkMode ? 'dark' : '' " :style="isMobile ? mainMobileStyle : {}">
                 <!-- header -->
                 <header :class="isDarkMode ? 'dark' : '' ">
                     <div class="left">
@@ -109,6 +109,10 @@
                     </div>
                 </header>
                 <!-- /header -->
+                <div id="go-back">
+                    <i @click="toggleMobile()" class="fa-solid fa-chevron-left"></i>
+                </div>
+
                 <main id="scroll-container">
                     <div id="chat-test" class="main-chat">
                             <div v-for="(message, messageIndex) in contacts[chatIndex].messages" :class="message.status" class="message">
