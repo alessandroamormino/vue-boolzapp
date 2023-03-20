@@ -62,11 +62,13 @@
                             <div class="chat-info">
                                 <span class="chat-name">{{contact.name}}</span>
                                 <span v-if="contact.isTyping" class="last-message">Sta scrivendo...</span>
-                                <span v-else class="last-message">{{contact.messages[contact.messages.length - 1].message}}</span>
+                                <span v-else-if="contact.messages.length >= 1" class="last-message">{{contact.messages[contact.messages.length - 1].message}}</span>
+                                <span v-else class="last-message">No messages yet..</span>
                             </div>
                         </div>
                         <div class="chat-right">
-                            <span>{{contact.messages[contact.messages.length - 1].date.slice(11, 16)}}</span>
+                            <span v-if="contact.messages.length >= 1">{{contact.messages[contact.messages.length - 1].date.slice(11, 16)}}</span>
+                            <span v-else></span>
                         </div>
                     </div>
                 </div>
@@ -94,20 +96,20 @@
                 <!-- /header -->
                 <main id="scroll-container">
                     <div id="chat-test" class="main-chat">
-                        <div v-for="(message, messageIndex) in contacts[chatIndex].messages" :class="message.status" class="message">
-                            <div :class="message.status == 'sent' ? 'green' : 'white' " class="message-bubble dropdown">
-
-                                <span>{{contacts[chatIndex].messages[messageIndex].message}}</span>
-
-                                    <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"></a>
-                                    <ul class="dropdown-menu dropdown-menu-end">
-                                      <li><button class="dropdown-item" type="button">Message info</button></li>
-                                      <li><button @click="deleteMessage(messageIndex)" class="dropdown-item" type="button">Delete message</button></li>
-                                    </ul>
-
-                                <span class="send-time">{{contacts[chatIndex].messages[messageIndex].date.slice(11, 16)}}</span>
+                            <div v-for="(message, messageIndex) in contacts[chatIndex].messages" :class="message.status" class="message" >
+                                <div :class="message.status == 'sent' ? 'green' : 'white' " class="message-bubble dropdown">
+    
+                                    <span>{{contacts[chatIndex].messages[messageIndex].message}}</span>
+    
+                                        <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"></a>
+                                        <ul class="dropdown-menu dropdown-menu-end">
+                                          <li><button class="dropdown-item" type="button">Message info</button></li>
+                                          <li><button @click="deleteMessage(messageIndex)" class="dropdown-item" type="button">Delete message</button></li>
+                                        </ul>
+    
+                                    <span class="send-time">{{contacts[chatIndex].messages[messageIndex].date.slice(11, 16)}}</span>
+                                </div>
                             </div>
-                        </div>
                     </div>
                 </main>
                 <footer>
