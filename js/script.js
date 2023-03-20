@@ -195,6 +195,7 @@ date = `${day}/${month}/${year} ${hoursMinute}`;
             }
         ], 
         chatIndex: 0,
+        activeIndex: 0,
         newMessage : '',
         searchContact: '',
         receivedMessages: [],
@@ -234,6 +235,7 @@ date = `${day}/${month}/${year} ${hoursMinute}`;
             this.newMessage = '';
 
             this.contacts[this.chatIndex].isTyping = true;
+            this.activeIndex = this.chatIndex;
             setTimeout(this.receiveMessage, 1000);
         }, 
         
@@ -246,7 +248,8 @@ date = `${day}/${month}/${year} ${hoursMinute}`;
                     status: 'received'
                 }
                 
-                this.contacts[this.chatIndex].messages.push(newObject);
+                // this.contacts[this.chatIndex].messages.push(newObject);
+                this.contacts[this.activeIndex].messages.push(newObject);
                 
                 this.contacts[this.chatIndex].isTyping = false;
                 
