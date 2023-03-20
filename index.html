@@ -90,7 +90,18 @@
                     <div class="right">
                         <i class="fa-solid fa-magnifying-glass"></i>
                         <i class="fa-solid fa-paperclip"></i>
-                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                        <i @click="showDropdown()" class="fa-solid fa-ellipsis-vertical"></i>
+                        <div v-show="chatDropdown" class="_dropdown">
+                            <ul>
+                                <li @click="deleteAllMessages()">Elimina messaggi</li>
+                                <li>Elimina chat</li>
+                            </ul>
+                        </div>
+                        
+
+
+
+
                     </div>
                 </header>
                 <!-- /header -->

@@ -351,3 +351,48 @@ footer .fa-paper-plane {
     font-size: 1.2em;
 }
 /* /Footer */
+
+i.fa-ellipsis-vertical {
+    font-size: 1em;
+}
+
+.right {
+    position: relative;
+}
+
+._dropdown{
+    position: absolute;
+    top: 60px;
+    left: -5px;
+    z-index: 1;
+    /* position */
+    display: flex;
+    align-items: center;
+
+    transform: translateX(-50%);
+
+    background-color: #fff;
+    border-radius: 5px;
+
+    padding: .5em 0;
+
+    width: 200px;
+
+}
+
+._dropdown ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+._dropdown ul li {
+    color: black;
+    padding: .2em 1em;
+    width: 100%;
+}
+
+._dropdown ul li:hover{
+    background-color: #F8F9FA;
+}

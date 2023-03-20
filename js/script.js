@@ -201,6 +201,7 @@ date = `${day}/${month}/${year} ${hoursMinute}`;
         lastDayOnline: '', 
         lastHourOnline: '',
         randomPhraseReceived: ['Ciao!', 'Grazie', 'Ok!', 'Non posso risponderti', 'Ti chiamo più tardi', 'Non so come risponderti..', 'Ci vediamo stasera?', 'Oggi non posso, mi spiace'],
+        chatDropdown: false,
       }
     }, 
     methods: {
@@ -274,6 +275,14 @@ date = `${day}/${month}/${year} ${hoursMinute}`;
             let container = document.getElementById('scroll-container');
             let scrollHeight = container.scrollHeight;
             container.scrollTop = scrollHeight;
+        }, 
+
+        showDropdown(){
+            this.chatDropdown = !this.chatDropdown;
+        }, 
+        
+        deleteAllMessages(){
+            this.contacts[this.chatIndex].messages.splice(0, this.contacts[this.chatIndex].messages.length);           
         }
 
     },
