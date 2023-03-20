@@ -111,7 +111,8 @@
                 <footer>
                     <i class="fa-regular fa-face-smile"></i>
                     <input v-model="newMessage" @keyup.enter="sendMessage(), scrollToEnd()" type="text" placeholder="Scrivi un messaggio">
-                    <i class="fa-solid fa-microphone"></i>
+                    <i v-show="newMessage == '' " class="fa-solid fa-microphone"></i>
+                    <i v-show="newMessage != '' " @click="sendMessage(), scrollToEnd()" class="fa-solid fa-paper-plane"></i>
                 </footer>
             </div>
             <!-- /chat side -->

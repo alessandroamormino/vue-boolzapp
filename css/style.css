@@ -346,4 +346,8 @@ footer input{
 footer input:focus-visible{
     outline: none;
 }
+
+footer .fa-paper-plane {
+    font-size: 1.2em;
+}
 /* /Footer */
