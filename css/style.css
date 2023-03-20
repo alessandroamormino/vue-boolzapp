@@ -568,6 +568,7 @@ footer input.dark {
     }
 
     #go-back {
+        display: block;
         height: 1em;
         padding: .5em;
         font-size: 1.1em;
