@@ -187,7 +187,6 @@ date = `${day}/${month}/${year} ${hoursMinute}`;
         ], 
         chatIndex: 0,
         newMessage : '',
-        // filteredContacts: [],
         searchContact: '',
         receivedMessages: [],
         lastDayOnline: '', 
