@@ -202,6 +202,7 @@ date = `${day}/${month}/${year} ${hoursMinute}`;
         lastHourOnline: '',
         randomPhraseReceived: ['Ciao!', 'Grazie', 'Ok!', 'Non posso risponderti', 'Ti chiamo più tardi', 'Non so come risponderti..', 'Ci vediamo stasera?', 'Oggi non posso, mi spiace'],
         chatDropdown: false,
+        isDarkMode: false,
       }
     }, 
     methods: {
@@ -287,6 +288,10 @@ date = `${day}/${month}/${year} ${hoursMinute}`;
         
         deleteChat(){
             this.contacts.splice(this.chatIndex, 1);
+        }, 
+
+        darkMode(){
+            this.isDarkMode = !this.isDarkMode;
         }
 
     },

@@ -14,12 +14,16 @@
 </head>
 <body>
     <div id="app">
-        <div class="background-top"></div>
-        <div id="ui">
+        <a @click="darkMode()" href="#" id="darkmode">
+            <i class="fa-solid fa-circle-half-stroke"></i>
+        </a>
+        <div class="background-top" :class="isDarkMode ? 'dark' : '' "></div>
+        <div class="background-bottom" :class="isDarkMode ? 'dark' : '' "></div>
+        <div id="ui" :class="isDarkMode ? 'dark' : '' ">
             <!-- contacts side -->
-            <div id="side">
+            <div id="side" class="" :class="isDarkMode ? 'dark' : '' ">
                 <!-- header -->
-                <header>
+                <header :class="isDarkMode ? 'dark' : '' ">
                     <div class="left">
                         <img src="img/avatar_1.jpg" alt="My Profile Avatar">
                         <span>Alessandro</span>
@@ -32,9 +36,9 @@
                 </header>
                 <!-- /header -->
                 <!-- notification -->
-                <div id="notification">
-                    <div class="icon">
-                        <i class="fa-solid fa-bell-slash"></i>
+                <div id="notification" :class="isDarkMode ? 'dark' : '' ">
+                    <div class="icon" :class="isDarkMode ? 'dark' : '' ">
+                        <i class="fa-solid fa-bell-slash" :class="isDarkMode ? 'dark' : '' "></i>
                     </div>
                     <div class="notification-info">
                         <span>Ricevi notifiche di nuovi messaggi</span>
@@ -43,18 +47,18 @@
                 </div>
                 <!-- /notification -->
                 <!-- search -->
-                <div id="search">
+                <div id="search" :class="isDarkMode ? 'dark' : '' ">
                     <div class="search-bar">
-                        <div class="icon">
+                        <div class="icon" :class="isDarkMode ? 'dark' : '' ">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </div>
-                        <input v-model="searchContact" @keyup="filterContact()" type="text" placeholder="Cerca o inizia una nuova chat">
+                        <input v-model="searchContact" @keyup="filterContact()" type="text" placeholder="Cerca o inizia una nuova chat" :class="isDarkMode ? 'dark' : '' ">
                     </div>
                 </div>
                 <!-- /search -->
                 <!-- contacts -->
                 <div id="chat-container">
-                    <div v-for="(contact, index) in contacts" v-show="contact.visible" @click="openChat(index), scrollToEnd(), filterMessages(), getLastOnline()" :class="index == chatIndex ? 'selected' : '' " class="chat">
+                    <div v-for="(contact, index) in contacts" v-show="contact.visible" @click="openChat(index), scrollToEnd(), filterMessages(), getLastOnline()" :class="index == chatIndex ? 'selected' : '' " class="chat" :class="isDarkMode ? 'dark' : '' ">
                         <div class="chat-left">
                             <div class="chat-img">
                                 <img :src="contact.avatar" :alt="contact.name">
@@ -76,9 +80,9 @@
             </div>
             <!-- /contacts side -->
             <!-- chat side -->
-            <div id="main">
+            <div id="main" :class="isDarkMode ? 'dark' : '' ">
                 <!-- header -->
-                <header>
+                <header :class="isDarkMode ? 'dark' : '' ">
                     <div class="left">
                         <img :src="contacts[chatIndex].avatar" :alt="contacts[chatIndex].name">
                         <div class="chat-info">
@@ -91,10 +95,10 @@
                         <i class="fa-solid fa-magnifying-glass"></i>
                         <i class="fa-solid fa-paperclip"></i>
                         <i @click="showDropdown()" class="fa-solid fa-ellipsis-vertical"></i>
-                        <div v-show="chatDropdown" class="_dropdown">
+                        <div v-show="chatDropdown" class="_dropdown" :class="isDarkMode ? 'dark' : '' ">
                             <ul>
-                                <li @click="deleteAllMessages()">Elimina messaggi</li>
-                                <li @click="deleteChat()">Elimina chat</li>
+                                <li @click="deleteAllMessages()" :class="isDarkMode ? 'dark' : '' ">Elimina messaggi</li>
+                                <li @click="deleteChat()" :class="isDarkMode ? 'dark' : '' ">Elimina chat</li>
                             </ul>
                         </div>
                         
@@ -107,15 +111,16 @@
                 <!-- /header -->
                 <main id="scroll-container">
                     <div id="chat-test" class="main-chat">
-                            <div v-for="(message, messageIndex) in contacts[chatIndex].messages" :class="message.status" class="message" >
-                                <div :class="message.status == 'sent' ? 'green' : 'white' " class="message-bubble dropdown">
+                            <div v-for="(message, messageIndex) in contacts[chatIndex].messages" :class="message.status" class="message">
+                                <!-- <div :class="message.status == 'sent' ? 'green' : 'white' " class="message-bubble dropdown"> -->
+                                    <div :class="message.status == 'sent' ? isDarkMode ? 'green dark' : 'green' : isDarkMode ? 'white dark' : 'white' " class="message-bubble dropdown">
     
                                     <span>{{contacts[chatIndex].messages[messageIndex].message}}</span>
     
                                         <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"></a>
-                                        <ul class="dropdown-menu dropdown-menu-end">
-                                          <li><button class="dropdown-item" type="button">Message info</button></li>
-                                          <li><button @click="deleteMessage(messageIndex)" class="dropdown-item" type="button">Delete message</button></li>
+                                        <ul class="dropdown-menu dropdown-menu-end" :class="isDarkMode ? 'dark' : '' ">
+                                        <li><button class="dropdown-item" :class="isDarkMode ? 'dark' : '' " type="button">Message info</button></li>
+                                        <li><button @click="deleteMessage(messageIndex)" class="dropdown-item" :class="isDarkMode ? 'dark' : '' " type="button">Delete message</button></li>
                                         </ul>
     
                                     <span class="send-time">{{contacts[chatIndex].messages[messageIndex].date.slice(11, 16)}}</span>
@@ -123,16 +128,15 @@
                             </div>
                     </div>
                 </main>
-                <footer>
+                <footer :class="isDarkMode ? 'dark' : '' ">
                     <i class="fa-regular fa-face-smile"></i>
-                    <input v-model="newMessage" @keyup.enter="sendMessage(), scrollToEnd(), getLastOnline()" type="text" placeholder="Scrivi un messaggio">
+                    <input v-model="newMessage" @keyup.enter="sendMessage(), scrollToEnd(), getLastOnline()" type="text" placeholder="Scrivi un messaggio" :class="isDarkMode ? 'dark' : '' ">
                     <i v-show="newMessage == '' " class="fa-solid fa-microphone"></i>
                     <i v-show="newMessage != '' " @click="sendMessage(), scrollToEnd(), getLastOnline()" class="fa-solid fa-paper-plane"></i>
                 </footer>
             </div>
             <!-- /chat side -->
         </div>
-
     </div>
     <!-- scripts -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>

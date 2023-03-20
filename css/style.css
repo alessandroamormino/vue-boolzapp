@@ -39,7 +39,7 @@ a:focus {
 
 body {
     font-family: 'IBM Plex Sans', sans-serif;
-    background-color: #D6DBD6;
+    
 }
 
 .background-top{
@@ -47,9 +47,18 @@ body {
     background-color: #009A88;
 }
 
+.background-bottom {
+    height: calc(100% - 150px);
+    background-color: #D6DBD6;
+
+}
+
 #app {
+    position: relative;
+    /* position */
     width: 100%;
     height: 100dvh;
+
 }
 
 /* ui */
@@ -66,6 +75,7 @@ body {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+
 }
 
 #side{
@@ -352,6 +362,7 @@ footer .fa-paper-plane {
 }
 /* /Footer */
 
+/* Dropdown menu */
 i.fa-ellipsis-vertical {
     font-size: 1em;
 }
@@ -395,4 +406,130 @@ i.fa-ellipsis-vertical {
 
 ._dropdown ul li:hover{
     background-color: #F8F9FA;
+}
+
+
+/* Dark Mode */
+.background-bottom.dark {
+    background-color: #353D37;
+}
+
+#main.dark{
+    background-image: url('../img/dark-bg.jpeg');
+}
+
+.white.dark {
+    background-color: #363638;
+    color: white;
+}
+
+.green.dark {
+    background-color: #005046;
+    color: white;
+}
+
+header.dark {
+    background-color: #1E1E1E;
+    color: white;
+}
+
+.background-top.dark {
+    background-color: #07221f;
+}
+
+footer.dark {
+    background-color: #1E1E1E;
+}
+
+footer input.dark {
+    background-color: #363638;
+    color: white;
+}
+
+#search.dark {
+    background-color: #1E1E1E;
+}
+
+#search .search-bar .icon.dark {
+    background-color: #363638;
+    color: white;
+
+    border-right: 1px solid #404040;
+}
+
+#search .search-bar input.dark {
+    background-color: #363638;
+    color: white;
+}
+
+#side.dark {
+    background-color: #1E1E1E;
+    color: white;
+}
+
+#side #notification.dark {
+    background-color: #005B7B;
+    color: white;
+}
+
+#side #notification .icon.dark {
+    background-color: #363638;
+}
+
+#side #notification .icon .fa-solid.dark{
+    color: #005B7B;
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+    width: 20px;
+}
+  
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #44444460;
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #444444; 
+}
+/* /scrollbar */
+
+.dropdown-menu.dark {
+    --bs-dropdown-bg: #363638;
+    --bs-dropdown-link-hover-bg: #4d4d50;
+}
+
+
+.dropdown-item.dark {
+    color: white;
+}
+
+._dropdown.dark{
+    background-color: #363638;
+}
+
+._dropdown ul li.dark {
+    color: white;
+}
+
+._dropdown ul li:hover.dark {
+    background-color: #4d4d50;
+}
+
+#darkmode {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+}
+
+#darkmode i {
+    color: white;
+    font-size: 1.5em;
 }
