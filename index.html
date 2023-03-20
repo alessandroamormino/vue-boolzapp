@@ -54,7 +54,7 @@
                 <!-- /search -->
                 <!-- contacts -->
                 <div id="chat-container">
-                    <div v-for="(contact, index) in filteredContacts" @click="openChat(index), filterMessages(), getLastOnline()"  :class="contact.visible ? 'visible' : '' " class="chat">
+                    <div v-for="(contact, index) in contacts" v-show="contact.visible" @click="openChat(index), scrollToEnd(), filterMessages(), getLastOnline()" class="chat">
                         <div class="chat-left">
                             <div class="chat-img">
                                 <img :src="contact.avatar" :alt="contact.name">
@@ -90,7 +90,7 @@
                     </div>
                 </header>
                 <!-- /header -->
-                <main id="test">
+                <main id="scroll-container">
                     <div id="chat-test" class="main-chat">
                         <div v-for="(message, messageIndex) in contacts[chatIndex].messages" :class="message.status" class="message">
                             <div :class="message.status == 'sent' ? 'green' : 'white' " class="message-bubble dropdown">

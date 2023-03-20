@@ -48,7 +48,7 @@ date = `${day}/${month}/${year} ${hoursMinute}`;
             {
                 name: 'Fabio',
                 avatar: './img/avatar_2.jpg',
-                visible: false,
+                visible: true,
                 messages: [
                     {
                         date: '20/03/2020 16:30:00',
@@ -70,7 +70,7 @@ date = `${day}/${month}/${year} ${hoursMinute}`;
             {
                 name: 'Samuele',
                 avatar: './img/avatar_3.jpg',
-                visible: false,
+                visible: true,
                 messages: [
                     {
                         date: '28/03/2020 10:10:40',
@@ -92,7 +92,7 @@ date = `${day}/${month}/${year} ${hoursMinute}`;
             {
                 name: 'Alessandro B.',
                 avatar: './img/avatar_4.jpg',
-                visible: false,
+                visible: true,
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
@@ -109,7 +109,7 @@ date = `${day}/${month}/${year} ${hoursMinute}`;
             {
                 name: 'Alessandro L.',
                 avatar: './img/avatar_5.jpg',
-                visible: false,
+                visible: true,
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
@@ -126,7 +126,7 @@ date = `${day}/${month}/${year} ${hoursMinute}`;
             {
                 name: 'Claudia',
                 avatar: './img/avatar_6.jpg',
-                visible: false,
+                visible: true,
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
@@ -148,7 +148,7 @@ date = `${day}/${month}/${year} ${hoursMinute}`;
             {
                 name: 'Federico',
                 avatar: './img/avatar_7.jpg',
-                visible: false,
+                visible: true,
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
@@ -165,7 +165,7 @@ date = `${day}/${month}/${year} ${hoursMinute}`;
             {
                 name: 'Davide',
                 avatar: './img/avatar_8.jpg',
-                visible: false,
+                visible: true,
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
@@ -187,7 +187,7 @@ date = `${day}/${month}/${year} ${hoursMinute}`;
         ], 
         chatIndex: 0,
         newMessage : '',
-        filteredContacts: [],
+        // filteredContacts: [],
         searchContact: '',
         receivedMessages: [],
         lastDayOnline: '', 
@@ -198,10 +198,6 @@ date = `${day}/${month}/${year} ${hoursMinute}`;
     methods: {
         openChat(chatIndex){
             this.chatIndex = chatIndex;
-            this.contacts.forEach((element)=>{
-                element.visible = false;
-            })
-            this.contacts[chatIndex].visible = true;
         },
 
         sendMessage(){
@@ -213,7 +209,7 @@ date = `${day}/${month}/${year} ${hoursMinute}`;
 
             if(this.newMessage==""){
                 return false;
-            } 
+            }           
 
             this.contacts[this.chatIndex].messages.push(newObject);
             this.newMessage = '';
@@ -230,14 +226,13 @@ date = `${day}/${month}/${year} ${hoursMinute}`;
             }
 
             this.contacts[this.chatIndex].messages.push(newObject);
+
         },
 
         filterContact(){
-            this.filteredContacts = this.contacts.filter((element) => {
-                if(element.name.toLowerCase().includes(this.searchContact.toLowerCase())){
-                    return true;
-                }
-            })
+            this.contacts.forEach((element) => {
+                element.visible = element.name.toLowerCase().includes(this.searchContact.toLowerCase());
+            });
         },
 
         deleteMessage(messageIndex){
@@ -263,14 +258,11 @@ date = `${day}/${month}/${year} ${hoursMinute}`;
         }, 
 
         scrollToEnd(){
-            let container = document.getElementById('test');
+            let container = document.getElementById('scroll-container');
             let scrollHeight = container.scrollHeight;
             container.scrollTop = scrollHeight;
         }
 
-    },
-    beforeMount(){
-        this.filteredContacts = [...this.contacts];
     },
 
     mounted(){
