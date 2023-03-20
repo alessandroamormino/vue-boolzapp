@@ -283,6 +283,10 @@ date = `${day}/${month}/${year} ${hoursMinute}`;
         
         deleteAllMessages(){
             this.contacts[this.chatIndex].messages.splice(0, this.contacts[this.chatIndex].messages.length);           
+        },
+        
+        deleteChat(){
+            this.contacts.splice(this.chatIndex, 1);
         }
 
     },
