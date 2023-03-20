@@ -61,7 +61,8 @@
                             </div>
                             <div class="chat-info">
                                 <span class="chat-name">{{contact.name}}</span>
-                                <span class="last-message">{{contact.messages[contact.messages.length - 1].message}}</span>
+                                <span v-if="contact.isTyping" class="last-message">Sta scrivendo...</span>
+                                <span v-else class="last-message">{{contact.messages[contact.messages.length - 1].message}}</span>
                             </div>
                         </div>
                         <div class="chat-right">
@@ -80,7 +81,8 @@
                         <img :src="contacts[chatIndex].avatar" :alt="contacts[chatIndex].name">
                         <div class="chat-info">
                             <span class="chat-name">{{contacts[chatIndex].name}}</span>
-                            <span class="last-online">Ultimo accesso il giorno {{lastDayOnline}} alle {{lastHourOnline}}</span>
+                            <span v-if="contacts[chatIndex].isTyping" class="last-online">Sta scrivendo...</span>
+                            <span v-else class="last-online">Ultimo accesso il giorno {{lastDayOnline}} alle {{lastHourOnline}}</span>
                         </div>
                     </div>
                     <div class="right">
@@ -110,9 +112,9 @@
                 </main>
                 <footer>
                     <i class="fa-regular fa-face-smile"></i>
-                    <input v-model="newMessage" @keyup.enter="sendMessage(), scrollToEnd()" type="text" placeholder="Scrivi un messaggio">
+                    <input v-model="newMessage" @keyup.enter="sendMessage(), scrollToEnd(), getLastOnline()" type="text" placeholder="Scrivi un messaggio">
                     <i v-show="newMessage == '' " class="fa-solid fa-microphone"></i>
-                    <i v-show="newMessage != '' " @click="sendMessage(), scrollToEnd()" class="fa-solid fa-paper-plane"></i>
+                    <i v-show="newMessage != '' " @click="sendMessage(), scrollToEnd(), getLastOnline()" class="fa-solid fa-paper-plane"></i>
                 </footer>
             </div>
             <!-- /chat side -->
