@@ -229,6 +229,7 @@ header .fa-solid{
 }
 
 #side .chat .chat-img {
+    width: 100px;
     height: 100%;
     padding: .5em 1em ;
 }
